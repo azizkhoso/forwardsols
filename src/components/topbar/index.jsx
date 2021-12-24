@@ -1,79 +1,96 @@
 import React from 'react';
 
-import {
-  Link,
-} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Container from '../shared/Container';
 import Row from '../shared/Row';
-import Accordian from '../shared/Accordian';
+// import Col from '../shared/Col';
+
+import forwardsols from '../../assets/forwardsols.png';
 
 export default function Topbar() {
-  const [isMobileMenuOpen, setMobileMenuOpen] = React.useState(false);
-  const mobileMenus = [
+  const [isMenuOpen, setMenuOpen] = React.useState(false);
+  const pages = [
     {
-      summary: 'For Institutions',
-      details: 'Inst',
+      title: 'Cloud Memberships',
+      link: '/cloud-memberships',
     },
     {
-      summary: 'For Consultants',
-      details: 'Cons',
+      title: 'Services',
+      link: '/services',
     },
     {
-      summary: 'For Students',
-      details: 'Stds',
-    },
-    {
-      summary: 'For Governments',
-      details: 'Inst',
-    },
-    {
-      summary: 'High Scools',
-      details: 'schools',
-    },
-    {
-      summary: 'Events',
-      details: 'events',
+      title: 'Advisors',
+      link: '/advisors',
     },
   ];
   return (
     <>
-      <div className="relative inset-x-0 text-xs text-white bg-primary">
-        <Container className="max-w-screen-xl px-5 py-3">
-          <Row className="flex-col items-center gap-2 md:flex-row">
-            <p className="self-end font-semibold uppercase cursor-pointer" aria-hidden onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
-              Menu
-            </p>
-            {
-              isMobileMenuOpen && mobileMenus.map((menu) => (
-                <Accordian
-                  summary={menu.summary}
-                  details={menu.details}
-                  classes={{ summary: 'gap-3' }}
-                />
-              ))
-            }
-            <Row className="flex-col items-center justify-between gap-3 md:flex-row">
-              <p className="text-sm cursor-pointer hover:text-yellow-400">
-                Click here for&nbsp;
-                <span className="font-bold uppercase">Global Education News</span>
-              </p>
-              <ul className="flex gap-2 uppercase list-none">
-                {
-                  ['home', 'about', 'testimonials', 'contact', 'social'].map((item) => (
-                    <li className="hover:text-yellow-400" key={item}>
-                      <Link to={`/${item}`}>{item}</Link>
-                    </li>
-                  ))
-                }
-              </ul>
-            </Row>
+      <div className="absolute inset-x-0 z-40 text-base text-white">
+        <Container className="max-w-screen-xl px-5 py-3 mt-3 xl:mt-9">
+          <Row className="items-center justify-between gap-1">
+            <img src={forwardsols} alt="forward solutions logo" className="w-48 h-auto" />
+            <ul className="flex gap-12 list-none">
+              {
+                pages.map((page) => (
+                  <li key={page.title} className="hidden hover:text-primary md:block">
+                    <Link to={page.link}>{page.title}</Link>
+                  </li>
+                ))
+              }
+              <li className="flex flex-col gap-1.5 p-2 cursor-pointer" aria-hidden onClick={() => setMenuOpen(!isMenuOpen)}>
+                <div className="flex gap-1">
+                  <span className="w-1 h-1 rounded-full bg-primary border-primary" />
+                  <span className="w-1 h-1 bg-white rounded-full" />
+                  <span className="w-1 h-1 bg-white rounded-full" />
+                </div>
+                <div className="flex gap-1">
+                  <span className="w-1 h-1 rounded-full bg-primary border-primary" />
+                  <span className="w-1 h-1 rounded-full bg-primary border-primary" />
+                  <span className="w-1 h-1 bg-white rounded-full" />
+                </div>
+              </li>
+            </ul>
           </Row>
         </Container>
+        <div className={`absolute inset-y-0 z-30 ${isMenuOpen ? 'w-screen' : 'w-0'} h-screen bg-gray-600 transition-width ease-in-out delay-0 duration-800 overflow-hidden`} style={{ right: 0 }}>
+          <Container className={`${isMenuOpen ? 'block' : 'block'} max-w-screen-xl px-5 py-3 xl:mt-9 mt-3`}>
+            <Row className="items-center justify-between gap-1">
+              <img src={forwardsols} alt="forward solutions logo" className="w-48 h-auto" />
+              <div className="flex flex-col gap-0.5 p-2 cursor-pointer" aria-hidden onClick={() => setMenuOpen(!isMenuOpen)}>
+                <div className="flex gap-2">
+                  <span className="w-1 h-1 rounded-full bg-primary border-primary" />
+                  <span className="w-1 h-1 rounded-full bg-primary border-primary" />
+                </div>
+                <div className="flex self-center justify-center">
+                  <span className="w-1 h-1 bg-white rounded-full" />
+                </div>
+                <div className="flex gap-2">
+                  <span className="w-1 h-1 rounded-full bg-primary border-primary" />
+                  <span className="w-1 h-1 rounded-full bg-primary border-primary" />
+                </div>
+              </div>
+            </Row>
+            <Row className="absolute inset-x-0 z-50 flex-col w-full gap-4 top-1/4">
+              <Row className="flex-col flex-wrap items-center justify-center gap-6 md:flex-row">
+                {
+                  pages.map((page, index) => (
+                    <span key={page.title}>
+                      <Link to={page.link} className="relative ease-in-out duration-1300 hover:text-primary" style={{ right: isMenuOpen ? 0 : -100 + index * -30, transitionProperty: 'right' }}>{page.title}</Link>
+                    </span>
+                  ))
+                }
+              </Row>
+              <Row className="items-center justify-center font-bold">
+                +1 (844) 984-3444
+              </Row>
+              <Row className="items-center justify-center gap-2">
+                F T I
+              </Row>
+            </Row>
+          </Container>
+        </div>
       </div>
-      <header className="relative inset-x-0">
-        <div className="w-1/2">Hello there</div>
-      </header>
     </>
   );
 }
