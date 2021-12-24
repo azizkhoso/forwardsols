@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
-import Container from '../shared/Container';
 import Row from '../shared/Row';
-// import Col from '../shared/Col';
 
 import forwardsols from '../../assets/forwardsols.png';
 
@@ -30,7 +28,7 @@ export default function Topbar() {
   return (
     <>
       <div className="absolute inset-x-0 z-40 text-base text-white">
-        <Container className="max-w-screen-xl px-5 py-3 mt-3 xl:mt-9">
+        <div className="flex px-5 py-3 mx-1 mt-3 md:mx-16 xl:mt-9">
           <Row className="items-center justify-between gap-1">
             <img src={forwardsols} alt="forward solutions logo" className="w-48 h-auto" />
             <ul className="flex gap-12 list-none">
@@ -55,9 +53,9 @@ export default function Topbar() {
               </li>
             </ul>
           </Row>
-        </Container>
+        </div>
         <div className={`absolute inset-y-0 z-30 ${isMenuOpen ? 'w-screen' : 'w-0'} h-screen bg-black transition-width ease-in-out delay-0 duration-800 overflow-hidden`} style={{ right: 0 }}>
-          <Container className={`${isMenuOpen ? 'block' : 'block'} max-w-screen-xl px-5 py-3 xl:mt-9 mt-3`}>
+          <div className={`${isMenuOpen ? 'block' : 'block'} flex mx-1 md:mx-16 px-5 py-3 xl:mt-9 mt-3`}>
             <Row className="items-center justify-between gap-1">
               <img src={forwardsols} alt="forward solutions logo" className="w-48 h-auto" />
               <div className="flex flex-col gap-0.5 p-2 cursor-pointer" aria-hidden onClick={() => setMenuOpen(!isMenuOpen)}>
@@ -92,7 +90,7 @@ export default function Topbar() {
                 <FontAwesomeIcon icon={faLinkedinIn} className="text-gray-300 cursor-pointer hover:text-white" />
               </Row>
             </Row>
-          </Container>
+          </div>
         </div>
       </div>
     </>

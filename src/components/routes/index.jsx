@@ -8,6 +8,7 @@ import {
 
 import Home from '../home';
 import Topbar from '../topbar';
+import Footer from '../footer';
 
 export default function AllRoutes() {
   return (
@@ -17,6 +18,7 @@ export default function AllRoutes() {
         <Routes>
           <Route index element={<Home />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );
