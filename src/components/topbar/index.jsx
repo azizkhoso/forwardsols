@@ -2,6 +2,9 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+
 import Container from '../shared/Container';
 import Row from '../shared/Row';
 // import Col from '../shared/Col';
@@ -53,7 +56,7 @@ export default function Topbar() {
             </ul>
           </Row>
         </Container>
-        <div className={`absolute inset-y-0 z-30 ${isMenuOpen ? 'w-screen' : 'w-0'} h-screen bg-gray-600 transition-width ease-in-out delay-0 duration-800 overflow-hidden`} style={{ right: 0 }}>
+        <div className={`absolute inset-y-0 z-30 ${isMenuOpen ? 'w-screen' : 'w-0'} h-screen bg-black transition-width ease-in-out delay-0 duration-800 overflow-hidden`} style={{ right: 0 }}>
           <Container className={`${isMenuOpen ? 'block' : 'block'} max-w-screen-xl px-5 py-3 xl:mt-9 mt-3`}>
             <Row className="items-center justify-between gap-1">
               <img src={forwardsols} alt="forward solutions logo" className="w-48 h-auto" />
@@ -84,8 +87,9 @@ export default function Topbar() {
               <Row className="items-center justify-center font-bold">
                 +1 (844) 984-3444
               </Row>
-              <Row className="items-center justify-center gap-2">
-                F T I
+              <Row className="items-end justify-center gap-2">
+                <FontAwesomeIcon icon={faFacebookF} className="text-gray-300 cursor-pointer hover:text-white" />
+                <FontAwesomeIcon icon={faLinkedinIn} className="text-gray-300 cursor-pointer hover:text-white" />
               </Row>
             </Row>
           </Container>
