@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         primary: '#f05b72',
+        primaryHover: 'rgb(156, 59, 74)',
       },
       transitionProperty: {
         width: 'width',
