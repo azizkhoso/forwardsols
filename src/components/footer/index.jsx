@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="flex items-center px-5 py-3 mx-1 text-white md:mx-16">
         <Row className="justify-between">
           <div className="flex flex-col">
-            <span>&copy;2020</span>
+            <span>&copy;2021</span>
             <span className="font-bold">ForwardSols</span>
             <span className="uppercase">Tech Pvt.ltd</span>
           </div>

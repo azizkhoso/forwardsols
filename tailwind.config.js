@@ -10,6 +10,7 @@ module.exports = {
       transitionProperty: {
         width: 'width',
         bgImg: 'backgroundImage',
+        left: 'left',
       },
       transitionDuration: {
         1300: '1300ms',

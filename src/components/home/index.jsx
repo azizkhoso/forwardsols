@@ -1,54 +1,77 @@
 import React from 'react';
-import styles from './home.module.css';
 
 import frontendDevelopment from '../../assets/frontendDevelopment.jpg';
 import digitalMarketing from '../../assets/digitalMarketing.jpg';
 import ai from '../../assets/ai.jpg';
+import whiteArrow from '../../assets/white-arrow.svg';
+
+import styles from './home.module.css';
 
 export default function Home() {
-  const a = '';
+  const [left, setLeft] = React.useState(0);
   const slides = [
     {
       img: frontendDevelopment,
       content: (
-        <div className="flex flex-col self-start font-semibold text-white w-60">
-          <h1 className="text-2xl font-bold">Amazing Frontends</h1>
+        <div className="flex flex-col self-start w-5/12 font-semibold text-white">
+          <h1 className="text-5xl font-bold">Amazing Frontends</h1>
           <p className="text-lg text-primary">Explore our amazing frontend web app services.</p>
-          <span className="border-2 border-white rounded-md">
-            Explore --=
+          <span className="z-20 flex items-center justify-between p-3 border border-white rounded-md w-60" onMouseEnter={() => setLeft(12)} onMouseLeave={() => setLeft(0)}>
+            <span>Explore</span>
+            <img src={whiteArrow} alt="right arrow" className="relative inset-x-0 z-20 w-8 h-4 duration-700 cursor-pointer -left-8 transition-left" style={{ left }} />
           </span>
         </div>
       ),
     },
     {
       img: digitalMarketing,
-      content: <p className="self-end font-semibold text-white">About digitalMarketing</p>,
+      content: (
+        <div className="flex flex-col self-end w-5/12 font-semibold text-white">
+          <h1 className="text-5xl font-bold">Market digitaly with us</h1>
+          <p className="text-lg text-primary">We provide SEO, SEM, Email Marketing and many more.</p>
+          <span className="z-20 flex items-center justify-between p-3 border border-white rounded-md w-60" onMouseEnter={() => setLeft(12)} onMouseLeave={() => setLeft(0)}>
+            <span>Explore</span>
+            <img src={whiteArrow} alt="right arrow" className="relative inset-x-0 z-20 w-8 h-4 duration-700 cursor-pointer -left-8 transition-left" style={{ left }} />
+          </span>
+        </div>
+      ),
     },
     {
       img: ai,
-      content: <p className="self-center font-semibold text-white">About ai</p>,
+      content: (
+        <div className="flex flex-col self-end w-5/12 font-semibold text-white">
+          <h1 className="text-5xl font-bold">Aritificial Intelligence</h1>
+          <p className="text-lg text-primary">Automate your business with AI.</p>
+          <span className="z-20 flex items-center justify-between p-3 border border-white rounded-md w-60" onMouseEnter={() => setLeft(12)} onMouseLeave={() => setLeft(0)}>
+            <span>Explore</span>
+            <img src={whiteArrow} alt="right arrow" className="relative inset-x-0 z-20 w-8 h-4 duration-700 cursor-pointer -left-8 transition-left" style={{ left }} />
+          </span>
+        </div>
+      ),
     },
   ];
   const [count, setCount] = React.useState(0);
   React.useEffect(() => {
-    setInterval(() => {
-      console.log({ count });
-      let c = count;
-      c += 1;
-      if (c === slides.length) c = 0;
-      setCount(() => c);
-    }, 60000);
-  }, []);
+    setTimeout(() => {
+      setCount((c) => c + 1);
+    }, 10000);
+  }, [count]);
   return (
     <>
-      <div
-        className={`absolute inset-0 h-full py-3 bg-no-repeat bg-cover xl:pt-9 transistion-bgImg duration-700 ease-in-out w-full ${a}`}
-        style={{ backgroundImage: `url(${slides[count].img})` }}
-      >
-        <div className="flex flex-col justify-center w-full h-full px-2 py-40 md:px-24">
-          {slides[count].content}
-        </div>
-      </div>
+      {
+        slides.map((slide, index) => (
+          <div
+            className={`absolute inset-0 h-full w-full py-3 duration-700 ease-in-out bg-no-repeat bg-cover xl:pt-9 transition-all ${index === count % slides.length ? 'block left-0' : 'hidden left-1/2'}`}
+            style={{
+              backgroundImage: `url(${slide.img})`,
+            }}
+          >
+            <div className="flex flex-col justify-center w-full h-full px-2 py-40 md:px-24">
+              {slide.content}
+            </div>
+          </div>
+        ))
+      }
       <div className={`${styles.cover} z-10 absolute inset-0 w-full h-full`} />
     </>
   );
