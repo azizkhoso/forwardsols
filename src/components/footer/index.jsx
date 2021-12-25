@@ -21,7 +21,7 @@ export default function Footer() {
             <span className="uppercase">Tech Pvt.ltd</span>
           </div>
           <div className="flex flex-col items-center gap-3 md:gap-6 md:flex-row">
-            <span className="font-bold">+1 (844) 984-3444</span>
+            <span className="font-bold">(+92) 321 8444938</span>
             <FontAwesomeIcon icon={faFacebookF} className="text-gray-300 cursor-pointer hover:text-primary" />
             <FontAwesomeIcon icon={faLinkedinIn} className="text-gray-300 cursor-pointer hover:text-primary" />
             <span className="w-16" />
