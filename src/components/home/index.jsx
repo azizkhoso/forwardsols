@@ -61,7 +61,7 @@ export default function Home() {
       {
         slides.map((slide, index) => (
           <div
-            className={`absolute inset-0 h-full w-full py-3 duration-700 ease-in-out bg-no-repeat bg-cover xl:pt-9 transition-all ${index === count % slides.length ? 'block left-0' : 'hidden left-1/2'}`}
+            className={`absolute inset-0 bottom-0 h-full w-full py-3 duration-700 ease-in-out bg-no-repeat bg-cover xl:pt-9 transition-all ${index === count % slides.length ? 'block left-0' : 'hidden left-1/2'}`}
             style={{
               backgroundImage: `url(${slide.img})`,
             }}
@@ -72,7 +72,7 @@ export default function Home() {
           </div>
         ))
       }
-      <div className={`${styles.cover} z-10 absolute inset-0 w-full h-full`} />
+      <div className={`${styles.cover} absolute inset-0 w-full h-full`} />
     </>
   );
 }

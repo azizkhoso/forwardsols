@@ -8,6 +8,7 @@ import { faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import Row from '../shared/Row';
 
 import forwardsols from '../../assets/forwardsols.png';
+import Message from '../Message';
 
 export default function Topbar() {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ export default function Topbar() {
   }
   return (
     <>
-      <div className="absolute inset-x-0 z-40 text-base text-white">
+      <div className="absolute inset-x-0 z-30 text-base text-white">
         <div className="flex px-5 py-3 mx-1 mt-3 md:mx-16 xl:mt-9">
           <Row className="items-center justify-between gap-1">
             <div onClick={() => handleLogoClick()} role="link" tabIndex="0" onKeyPress={() => handleLogoClick()}>
@@ -67,7 +68,7 @@ export default function Topbar() {
             </ul>
           </Row>
         </div>
-        <div className={`absolute inset-y-0 z-30 ${isMenuOpen ? 'w-screen' : 'w-0'} h-screen bg-black transition-width ease-in-out delay-0 duration-800 overflow-hidden`} style={{ right: 0 }}>
+        <div className={`absolute inset-y-0 z-20 ${isMenuOpen ? 'w-screen' : 'w-0'} h-screen bg-black transition-width ease-in-out delay-0 duration-800 overflow-hidden`} style={{ right: 0 }}>
           <div className={`${isMenuOpen ? 'block' : 'block'} flex mx-1 md:mx-16 px-5 py-3 xl:mt-9 mt-3`}>
             <Row className="items-center justify-between gap-1">
               <div onClick={() => handleLogoClick()} role="link" tabIndex="0" onKeyPress={() => navigate('/')}>
@@ -87,7 +88,7 @@ export default function Topbar() {
                 </div>
               </div>
             </Row>
-            <Row className="absolute inset-x-0 z-50 flex-col w-full gap-4 top-1/4">
+            <Row className="absolute inset-x-0 z-20 flex-col w-full gap-4 top-1/4">
               <Row className="flex-col flex-wrap items-center justify-center gap-6 md:flex-row">
                 {
                   pages.map((page, index) => (
@@ -106,6 +107,7 @@ export default function Topbar() {
               </Row>
             </Row>
           </div>
+          <Message />
         </div>
       </div>
     </>
