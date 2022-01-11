@@ -9,7 +9,6 @@ import Row from '../shared/Row';
 export default function Footer() {
   return (
     <>
-      <div className="relative flex-grow" />
       <div id="footer" className="relative bottom-0 w-full mt-6 bg-transparent md:mt-0">
         <div className="flex items-center px-6 pt-3 pb-5 mx-1 text-white md:mx-16">
           <Row className="justify-between">

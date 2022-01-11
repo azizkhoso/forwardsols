@@ -1,11 +1,12 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function Row({
-  children, className, classes,
+  children, className, classes, style,
 }) {
   return (
-    <div className={`flex flex-row w-full${className && ` ${className}`}${classes.root && ` ${classes.root}`}`}>
+    <div className={`flex flex-row w-full${className && ` ${className}`}${classes.root && ` ${classes.root}`}`} style={style}>
       {children}
     </div>
   );
@@ -17,6 +18,7 @@ Row.defaultProps = {
   classes: {
     root: '',
   },
+  style: {},
 };
 
 Row.propTypes = {
@@ -25,4 +27,5 @@ Row.propTypes = {
   classes: PropTypes.shape({
     root: PropTypes.string,
   }),
+  style: PropTypes.object,
 };

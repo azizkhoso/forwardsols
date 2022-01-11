@@ -44,14 +44,14 @@ export default function Contact() {
               <span className="flex items-center justify-center h-full px-2 py-1 bg-gray-500">
                 <FontAwesomeIcon icon={faUser} />
               </span>
-              <input className="flex-grow h-full px-2 py-1 bg-gray-600 border-0" type="text" required placeholder="Your name" />
+              <input className="w-full h-full px-2 py-1 bg-gray-600 border-0" type="text" required placeholder="Your name" />
               <span className="h-full px-2 py-1 text-lg bg-gray-600 text-primary">*</span>
             </span>
             <span className="flex w-full h-6">
               <span className="flex items-center justify-center h-full px-2 py-1 bg-gray-500">
                 <FontAwesomeIcon icon={faAt} />
               </span>
-              <input className="flex-grow h-full px-2 py-1 bg-gray-600 border-0" type="email" required placeholder="Your email" />
+              <input className="w-full h-full px-2 py-1 bg-gray-600 border-0" type="email" required placeholder="Your email" />
               <span className="h-full px-2 py-1 text-lg bg-gray-600 text-primary">*</span>
             </span>
             <textarea type="text" className="w-full px-2 py-1 bg-gray-600 border-0" placeholder="Message" />

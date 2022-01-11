@@ -73,6 +73,7 @@ export default function Home() {
         ))
       }
       <div className={`${styles.cover} absolute inset-0 w-full h-full`} />
+      <div className="flex-grow" />
     </>
   );
 }

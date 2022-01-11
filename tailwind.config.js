@@ -11,6 +11,7 @@ module.exports = {
         width: 'width',
         bgImg: 'backgroundImage',
         left: 'left',
+        opacity: 'opacity',
       },
       transitionDuration: {
         1300: '1300ms',
