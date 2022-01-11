@@ -11,6 +11,7 @@ import Topbar from '../topbar';
 import Footer from '../footer';
 import Contact from '../contact';
 import Services from '../services';
+import Portfolio from '../portfolio';
 
 export default function AllRoutes() {
   return (
@@ -21,6 +22,7 @@ export default function AllRoutes() {
           <Route index element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/portfolio" element={<Portfolio />} />
         </Routes>
         <Footer />
       </div>

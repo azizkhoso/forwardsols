@@ -11,7 +11,9 @@ module.exports = {
         width: 'width',
         bgImg: 'backgroundImage',
         left: 'left',
+        right: 'right',
         opacity: 'opacity',
+        display: 'display',
       },
       transitionDuration: {
         1300: '1300ms',
@@ -19,7 +21,11 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      backdropBrightness: ['hover'],
+      width: ['hover'],
+      visibility: ['hover'],
+    },
   },
   plugins: [],
 };
