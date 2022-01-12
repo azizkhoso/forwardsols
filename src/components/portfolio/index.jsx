@@ -23,15 +23,15 @@ export default function Portfolio() {
   ];
   return (
     <div className="flex-grow w-full p-5 xl:pt-16">
-      <Row className="flex-col h-full gap-6 px-1 pt-16 pb-3 text-white md:px-16">
-        <ul className="flex flex-wrap justify-center w-full gap-5 px-3 list-none md:gap-9 lg:justify-end">
+      <Row className="flex-col h-full gap-1 px-1 pt-16 pb-3 text-white md:px-16">
+        <ul className="flex flex-wrap justify-center w-full gap-5 px-3 text-sm list-none md:gap-9 lg:justify-end">
           {
             menus.map((m) => (
               <li className={`font-extrabold uppercase ${search === m.link && 'text-primary'}`}><Link to={m.link}>{m.title}</Link></li>
             ))
           }
         </ul>
-        <div className="grid w-full h-full grid-cols-1 gap-1 pt-5 md:grid-cols-2 lg:grid-cols-3" style={{ gridTemplateColums: 'repeat(auto-fill, 250px)', gridTemplateRows: 'repeat(auto-fill, 324px)' }}>
+        <div className="flex flex-wrap justify-center w-full h-full">
           {
             products.map((p) => (
               <Product title={p.title} />

@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
@@ -18,6 +19,16 @@ module.exports = {
       transitionDuration: {
         1300: '1300ms',
       },
+      aspectRatio: {
+        square: '1 / 1',
+        '2/1': '2 / 1',
+        '1/2': '1/2',
+      },
+      backdropBrightness: {
+        30: '0.3',
+        10: '0.2',
+        20: '0.1',
+      },
     },
   },
   variants: {
@@ -26,6 +37,9 @@ module.exports = {
       width: ['hover'],
       visibility: ['hover'],
     },
+    right: ['hover', 'responsive'],
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+  ],
 };
