@@ -49,7 +49,7 @@ export default function Topbar() {
                 ))
                   : (
                     <li key={pathname} className="hidden text-white md:block">
-                      <p>{pages.find((p) => p.link === pathname).title}</p>
+                      <p>{pages.find((p) => p.link === pathname)?.title}</p>
                     </li>
                   )
               }
