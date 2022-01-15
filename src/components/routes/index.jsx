@@ -1,9 +1,9 @@
 import React from 'react';
 
 import {
-  BrowserRouter,
   Routes,
   Route,
+  useLocation,
 } from 'react-router-dom';
 
 import Home from '../home';
@@ -16,10 +16,11 @@ import Portfolio from '../portfolio';
 import ProductDescription from '../portfolio/ProductDescription';
 
 export default function AllRoutes() {
+  const { pathname } = useLocation();
   return (
-    <BrowserRouter>
+    <>
       <Topbar />
-      <div className="absolute inset-0 flex flex-col w-full radial-gradient">
+      <div className={`absolute inset-x-0 top-0 flex flex-col w-full radial-gradient ${pathname !== '/contact' && 'h-full'}`}>
         <Routes>
           <Route index element={<Home />} />
           <Route path="/contact" element={<Contact />} />
@@ -30,6 +31,6 @@ export default function AllRoutes() {
         </Routes>
         <Footer />
       </div>
-    </BrowserRouter>
+    </>
   );
 }

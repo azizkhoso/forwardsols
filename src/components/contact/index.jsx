@@ -10,7 +10,7 @@ export default function Contact() {
   return (
     <div className="w-full h-full p-5 xl:pt-16">
       <Row className="flex-col h-full px-1 pt-16 pb-3 text-white lg:items-start md:px-16 lg:flex-row">
-        <Col xs="12" lg="8" className="h-full p-4 bg-gray-800 lg:p-6">
+        <Col xs="12" lg="8" className="h-full p-12 bg-gray-800 lg:p-16">
           <h1 className="text-3xl font-extrabold">
             Hire a dedicated developer!
           </h1>

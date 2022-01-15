@@ -6,9 +6,9 @@ import ceo from '../../assets/ceo.jpg';
 export default function About() {
   return (
     <div className="flex-grow w-full p-5 xl:pt-16">
-      <div className="flex flex-col h-full gap-6 px-1 pt-16 pb-3 text-white md:px-16">
+      <div className="flex flex-col h-full gap-6 px-1 pt-24 pb-3 text-white md:pt-16 md:px-16">
         <p className="w-full text-2xl font-extrabold text-center text-primary">Forward Solutions</p>
-        <p className="w-full mx-auto mt-4 text-center md:w-3/4 lg:w-2/3">
+        <p className="w-full mx-auto text-center md:w-3/4 lg:w-2/3">
           At Forward we are aware that creating client-oriented software takes
           an amalgam of technical excellenceand clear communication that&apos;s why
           our firm hires only the very best to ensure you to receive both.

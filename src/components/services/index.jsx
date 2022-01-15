@@ -44,7 +44,7 @@ export default function Services() {
     },
   ];
   return (
-    <div className="flex-grow w-full p-5 xl:pt-16">
+    <div className="flex-grow w-full h-auto p-5 xl:pt-16">
       <Row className="flex-col h-full gap-6 px-1 pt-16 pb-3 text-white md:px-16">
         <div className="flex flex-col items-start justify-center w-full h-full gap-1 pt-72 lg:pt-5 lg:flex-wrap lg:flex-row lg:gap-9">
           {
