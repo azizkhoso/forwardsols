@@ -24,6 +24,10 @@ export default function Topbar() {
       link: '/services',
     },
     {
+      title: 'About',
+      link: '/about',
+    },
+    {
       title: 'Let\'s Connect',
       link: '/contact',
     },
