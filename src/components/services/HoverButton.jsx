@@ -12,7 +12,7 @@ export default function HoverButton({ style, ...others }) {
   return (
     <button
       {...others}
-      style={style}
+      style={{ ...style, boxShadow: `${isHover ? '0 0 10px rgb(240, 91, 114)' : ''}` }}
       className={`flex items-center justify-between gap-3 p-3 w-44 rounded-lg border ${isHover ? 'bg-primary border-primary' : 'bg-transparent border-white'} text-white text-md ${others.className}`}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}

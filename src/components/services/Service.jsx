@@ -63,6 +63,8 @@ export default function Service({
             transitionDelay: '700ms',
             transitionProperty: 'opacity',
             visibility: `${isHover ? 'visible' : 'hidden'}`,
+            marginLeft: 'auto',
+            marginRight: 'auto',
           }}
         >
           See More
