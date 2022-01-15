@@ -15,9 +15,23 @@ module.exports = {
         right: 'right',
         opacity: 'opacity',
         display: 'display',
+        translate: 'translate',
       },
       transitionDuration: {
         1300: '1300ms',
+        1600: '1600ms',
+        1900: '1900ms',
+        2100: '2100ms',
+        2400: '2400ms',
+        2700: '2700ms',
+      },
+      transitionDelay: {
+        1300: '1300ms',
+        1600: '1600ms',
+        1900: '1900ms',
+        2100: '2100ms',
+        2400: '2400ms',
+        2700: '2700ms',
       },
       aspectRatio: {
         square: '1 / 1',
@@ -36,8 +50,8 @@ module.exports = {
       backdropBrightness: ['hover'],
       width: ['hover'],
       visibility: ['hover'],
+      inset: ['hover'],
     },
-    right: ['hover', 'responsive'],
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),

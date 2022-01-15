@@ -1,79 +1,76 @@
 import React from 'react';
 
+import styles from './home.module.css';
+
 import frontendDevelopment from '../../assets/frontendDevelopment.jpg';
 import digitalMarketing from '../../assets/digitalMarketing.jpg';
 import ai from '../../assets/ai.jpg';
 import whiteArrow from '../../assets/white-arrow.svg';
 
-import styles from './home.module.css';
-
 export default function Home() {
-  const [left, setLeft] = React.useState(0);
   const slides = [
     {
       img: frontendDevelopment,
-      content: (
-        <div className="flex flex-col self-start w-5/12 font-semibold text-white">
-          <h1 className="text-5xl font-bold">Amazing Frontends</h1>
-          <p className="text-lg text-primary">Explore our amazing frontend web app services.</p>
-          <span className="z-20 flex items-center justify-between p-3 border border-white rounded-md w-60" onMouseEnter={() => setLeft(12)} onMouseLeave={() => setLeft(0)}>
-            <span>Explore</span>
-            <img src={whiteArrow} alt="right arrow" className="relative inset-x-0 z-20 w-8 h-4 duration-700 cursor-pointer -left-8 transition-left" style={{ left }} />
-          </span>
-        </div>
-      ),
+      title: 'Amazing frontends',
+      text: 'Explore our amazing frontend web app services.',
+      link: '/services',
     },
     {
       img: digitalMarketing,
-      content: (
-        <div className="flex flex-col self-end w-5/12 font-semibold text-white">
-          <h1 className="text-5xl font-bold">Market digitaly with us</h1>
-          <p className="text-lg text-primary">We provide SEO, SEM, Email Marketing and many more.</p>
-          <span className="z-20 flex items-center justify-between p-3 border border-white rounded-md w-60" onMouseEnter={() => setLeft(12)} onMouseLeave={() => setLeft(0)}>
-            <span>Explore</span>
-            <img src={whiteArrow} alt="right arrow" className="relative inset-x-0 z-20 w-8 h-4 duration-700 cursor-pointer -left-8 transition-left" style={{ left }} />
-          </span>
-        </div>
-      ),
+      title: 'Market digitaly with us',
+      text: 'We provide SEO, SEM, Email Marketing and many more.',
+      link: '/services',
     },
     {
       img: ai,
-      content: (
-        <div className="flex flex-col self-end w-5/12 font-semibold text-white">
-          <h1 className="text-5xl font-bold">Aritificial Intelligence</h1>
-          <p className="text-lg text-primary">Automate your business with AI.</p>
-          <span className="z-20 flex items-center justify-between p-3 border border-white rounded-md w-60" onMouseEnter={() => setLeft(12)} onMouseLeave={() => setLeft(0)}>
-            <span>Explore</span>
-            <img src={whiteArrow} alt="right arrow" className="relative inset-x-0 z-20 w-8 h-4 duration-700 cursor-pointer -left-8 transition-left" style={{ left }} />
-          </span>
-        </div>
-      ),
+      title: 'Aritificial Intelligence',
+      text: 'Automate your business with AI',
+      link: '/services',
     },
   ];
   const [count, setCount] = React.useState(0);
   React.useEffect(() => {
     setTimeout(() => {
       setCount((c) => c + 1);
-    }, 10000);
+    }, 5000);
   }, [count]);
   return (
     <>
-      {
-        slides.map((slide, index) => (
-          <div
-            className={`absolute inset-0 bottom-0 h-full w-full py-3 duration-700 ease-in-out bg-no-repeat bg-cover xl:pt-9 transition-all ${index === count % slides.length ? 'block left-0' : 'hidden left-1/2'}`}
-            style={{
-              backgroundImage: `url(${slide.img})`,
-            }}
-          >
-            <div className="flex flex-col justify-center w-full h-full px-2 py-40 md:px-24">
-              {slide.content}
-            </div>
-          </div>
-        ))
-      }
-      <div className={`${styles.cover} absolute inset-0 w-full h-full`} />
       <div className="flex-grow" />
+      <div className="absolute flex-grow w-full h-full bg-black">
+        <div className="relative flex items-stretch w-full h-full overflow-hidden justify-items-stretch">
+          {
+            slides.map((slide, idx) => (
+              <div
+                className="absolute flex flex-col w-screen h-full text-white"
+                style={{
+                  transitionProperty: 'left',
+                  left: `calc((${idx} * 100vw) - (${count % slides.length} * 100vw))`,
+                  transitionDuration: '1300ms',
+                  transitionTimingFunction: 'ease-in-out',
+                  backgroundImage: `url(${slide.img})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: 'cover',
+                }}
+              >
+                <div
+                  className={`relative flex flex-col w-5/12 mx-auto font-semibold text-white transition-opacity delay-2100 top-1/2 duration-1600 opacity-${(count % slides.length) === idx ? '100' : '0'}`}
+                >
+                  <h1 className="text-5xl font-bold">{slide.title}</h1>
+                  <p className="text-lg text-primary">{slide.text}</p>
+                  <span className="relative z-20 flex items-center justify-between p-3 border border-white rounded-md w-60">
+                    <span>Explore</span>
+                    <span className="absolute inset-0 z-20 flex items-center duration-700 ease-in-out cursor-pointer transition-right hover:-right-6">
+                      <img src={whiteArrow} alt="right arrow" className="w-8 h-4 ml-auto mr-8" />
+                    </span>
+                  </span>
+                </div>
+              </div>
+            ))
+          }
+          <div className={`${styles.cover} absolute inset-0 w-full h-full`} />
+        </div>
+      </div>
     </>
   );
 }
