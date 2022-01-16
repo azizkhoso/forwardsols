@@ -12,7 +12,7 @@ export default function About() {
           At Forward we are aware that creating client-oriented software takes
           an amalgam of technical excellenceand clear communication that&apos;s why
           our firm hires only the very best to ensure you to receive both.
-          As we know that every client is unique , we strive to deliver an individual,
+          As we know that every client is unique, we strive to deliver an individual,
           innovative and affordable proposal every time and  follow it through
           an outstanding delivery which is both on time and within budget.
         </p>
