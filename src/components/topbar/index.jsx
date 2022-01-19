@@ -31,6 +31,10 @@ export default function Topbar() {
       title: 'Let\'s Connect',
       link: '/contact',
     },
+    {
+      title: 'Executives',
+      link: '/executives',
+    },
   ];
   function handleLogoClick() {
     setMenuOpen(false);
@@ -46,7 +50,7 @@ export default function Topbar() {
             </div>
             <ul className="flex gap-12 list-none">
               {
-                pathname === '/' ? pages.map((page) => (
+                pathname === '/' ? pages.slice(0, 4).map((page) => (
                   <li key={page.title} className={`hidden ${page.link === '/contact' ? 'text-primary' : 'hover:text-primary'} md:block`}>
                     <Link to={page.link}>{page.title}</Link>
                   </li>
@@ -93,7 +97,7 @@ export default function Topbar() {
               </div>
             </Row>
             <Row className="absolute inset-x-0 z-20 flex-col w-full gap-4 top-1/4">
-              <Row className="flex-col flex-wrap items-center justify-center gap-6 md:flex-row">
+              <Row className="flex-col flex-wrap items-center justify-center gap-6 text-xl md:flex-row">
                 {
                   pages.map((page, index) => (
                     <span key={page.title} role="button" onKeyPress={() => setMenuOpen(false)} tabIndex={1 + index} onClick={() => setMenuOpen(false)}>

@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.page-container {
+  @apply
+    /* Default */
+    flex-grow
+    w-full
+    h-auto
+    p-5
+    /* Responsive */
+    xl:pt-16
+  
+}
+
+.page-content {
+  @apply
+    /* Default */
+    relative
+    flex
+    flex-col
+    h-full
+    gap-6
+    px-1 pt-16 pb-3
+    text-white
+    /* Responsive */
+    md:px-16
+}

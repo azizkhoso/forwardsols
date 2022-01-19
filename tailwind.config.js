@@ -51,6 +51,8 @@ module.exports = {
       width: ['hover'],
       visibility: ['hover'],
       inset: ['hover'],
+      margin: ['odd', 'even'],
+      filter: ['hover'],
     },
   },
   plugins: [

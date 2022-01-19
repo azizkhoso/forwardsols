@@ -1,0 +1,43 @@
+.page-content {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.slide {
+  min-height: 500px;
+  width: 95%;
+  @apply
+    /* Default */
+    relative
+    flex
+    mx-3
+    border-2
+    p-2
+    font-extralight
+    text-5xl
+    bg-no-repeat
+    bg-cover
+    filter
+    grayscale
+    hover:border-primary
+    hover:filter-none
+    /* responsive */
+    md:w-80
+}
+
+.slide-title {
+  @apply
+    /* Default */
+    w-full
+    text-5xl
+    bg-transparent
+    font-extralight
+}
+
+.designation {
+  @apply
+    /* Default */
+    w-full
+    text-xl
+    font-extrabold
+}
