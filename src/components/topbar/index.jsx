@@ -35,6 +35,10 @@ export default function Topbar() {
       title: 'Executives',
       link: '/executives',
     },
+    {
+      title: 'Locations',
+      link: '/locations',
+    },
   ];
   function handleLogoClick() {
     setMenuOpen(false);

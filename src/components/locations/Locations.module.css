@@ -1,0 +1,88 @@
+.locations-container {
+  @apply
+    /* Default */
+    flex
+    flex-wrap
+    w-full
+    h-full
+    /* Responsive */
+    lg:h-screen
+}
+
+.slogan-container {
+  background-color: #232323;
+  @apply
+    /* Default */
+    w-full
+    flex
+    p-9
+    /* Responsive */
+    lg:w-1/3
+}
+
+.location {
+  @apply
+    /* Default */
+    w-full
+    h-4/6
+    flex
+    relative
+    overflow-hidden
+    /* Responsive */
+    md:h-full
+    md:w-1/2
+    lg:w-1/3
+}
+
+.location-img {
+  @apply
+    /* Default */
+    absolute
+    w-full
+    h-full
+    object-cover
+    duration-700
+    transform
+    transition
+}
+
+.location:hover .location-img {
+  @apply
+    /* Default */
+    scale-125
+}
+
+.location-title {
+  @apply
+   /* Default */
+   bg-black
+   mt-9
+   w-1/3
+   self-start
+   flex
+   flex-col
+   z-10
+   py-1
+   px-2
+}
+
+.company-name {
+  font-size: 10px;
+  @apply
+    /* Defaut */
+    font-semibold
+    uppercase
+    text-primary
+}
+
+.location-details {
+  @apply
+    /* Default */
+    z-10
+    mt-auto
+    mb-6
+    w-full
+    flex
+    flex-col
+    gap-3
+}

@@ -15,6 +15,7 @@ import About from '../about';
 import Portfolio from '../portfolio';
 import ProductDescription from '../portfolio/ProductDescription';
 import Executives from '../executives';
+import Locations from '../locations';
 
 export default function AllRoutes() {
   const { pathname } = useLocation();
@@ -29,7 +30,8 @@ export default function AllRoutes() {
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/portfolio/:item" element={<ProductDescription />} />
-          <Route path="/executives" element={<Executives />} />
+          <Route path="/executives/*" element={<Executives />} />
+          <Route path="/locations/*" element={<Locations />} />
         </Routes>
         <Footer />
       </div>
