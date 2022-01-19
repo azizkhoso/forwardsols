@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Services.module.css';
 
 import Row from '../shared/Row';
 import Service from './Service';
@@ -12,12 +13,6 @@ import pytorch from '../../assets/pytorch.svg';
 
 export default function Services() {
   const services = [
-    {
-      title: 'Aritificial Intelligence',
-      content: 'Ai content here the lksjf lsdjf kjsdlfj ljsdflj lsjf kjlfj lsdjfdj lldjf lsdjfldsjfl jsldfls lsjflsdjfl jslfjls jflsdfj',
-      logos: [tensorflow, kubernetes, colab, aws, keras, pytorch],
-      link: '/portfolio#ai',
-    },
     {
       title: 'Web Development',
       content: 'Ai content here the lksjf lsdjf kjsdlfj ljsdflj lsjf kjlfj lsdjfdj lldjf lsdjfldsjfl jsldfls lsjflsdjfl jslfjls jflsdfj',
@@ -44,9 +39,9 @@ export default function Services() {
     },
   ];
   return (
-    <div className="flex-grow w-full h-auto p-5 xl:pt-16">
-      <Row className="flex-col h-full gap-6 px-1 pt-16 pb-3 text-white md:px-16">
-        <div className="flex flex-col items-start justify-center w-full h-full gap-1 pt-72 lg:pt-5 lg:flex-wrap lg:flex-row lg:gap-9">
+    <div className="page-container">
+      <Row className="page-content">
+        <div className={styles['services-container']}>
           {
             services.map((s) => (
               <Service title={s.title} content={s.content} logos={s.logos} link={s.link} />

@@ -1,0 +1,17 @@
+.services-container {
+  @apply
+    /* Default */
+    flex
+    flex-col
+    items-start
+    justify-center
+    w-full
+    h-full
+    pt-72
+    /* Responsive */
+    md:flex-row
+    md:flex-wrap
+    lg:pt-5
+    lg:flex-wrap
+    lg:flex-row
+}

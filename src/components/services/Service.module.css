@@ -1,0 +1,131 @@
+.service {
+  min-height: 300px;
+  @apply
+    /* Default */
+    flex
+    flex-col
+    w-full
+    gap-6
+    px-3
+    text-center
+    /* Responsive */
+    md:w-4/12
+    lg:w-3/12
+}
+
+.title {
+  transform: translate(0, 125px);
+  transition-property: 'transform';
+  transition-timing-function: 'cubic-bezier(.5,1.64,.41,1)';
+  @apply
+    /* Default */
+    text-3xl
+    font-extrabold
+    duration-300
+}
+
+.service:hover .title {
+  transform: translate(0, -12px);
+}
+
+.content {
+  @apply
+    /* Default */
+    transition-opacity
+    ease-in-out
+    delay-200
+    duration-1000
+    opacity-0
+    invisible
+}
+
+.service:hover .content {
+  opacity: 0.9;
+  visibility: visible;
+}
+
+.images-container {
+  @apply
+    /* Default */
+    flex
+    flex-wrap
+    justify-center
+    gap-5
+    invisible
+    transition-opacity
+    delay-700
+    duration-700
+    opacity-0
+}
+
+.image {
+  @apply
+    /* Default */
+    w-8 h-8
+    transition-opacity
+    ease-in-out
+    duration-1000
+    grayscale
+    filter
+    hover:visible
+    hover:filter-none
+}
+
+.service:hover .images-container {
+  @apply
+    /* Default */
+    visible
+    opacity-90
+}
+
+.btn-see-more {
+  box-shadow: none;
+  @apply
+    /* Default */
+    flex
+    items-center
+    justify-between
+    gap-3
+    p-3
+    w-44
+    rounded-lg
+    border
+    mx-auto
+    opacity-0
+    transition-opacity
+    delay-1000
+    duration-1000
+    invisible
+    bg-transparent 
+    border-white
+    text-white
+}
+
+.btn-see-more:hover {
+  box-shadow: 0 0 10px rgb(240, 91, 114);
+  @apply
+    /* Default */
+    border-primary
+    bg-primary
+}
+
+.service:hover .btn-see-more {
+  @apply
+    /* Default */
+    opacity-90
+    visible
+}
+
+.white-arrow {
+  transform: translate(-10px, 0px);
+  @apply
+    /* Default */
+    w-5
+    h-5
+    transition-transform
+    duration-700
+}
+
+.btn-see-more:hover .white-arrow {
+  transform: translate(10px, 0);
+}
