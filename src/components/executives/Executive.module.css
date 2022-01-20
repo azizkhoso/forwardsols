@@ -1,0 +1,60 @@
+.image-container {
+  @apply
+    /* Default */
+    w-full
+    order-first
+    /* Responsive */
+    md:w-1/2
+    md:order-last
+}
+
+.profile-container {
+  @apply
+    /* Default */
+    w-full
+    /* Responsive */
+    md:w-1/2
+}
+
+.profile-details {
+  background-color: #232323;
+  @apply
+    /* Default */
+    w-full
+    px-6
+    py-12
+    /* Responsive */
+    md:px-16
+}
+
+.name-heading {
+  @apply
+    /* Default */
+    w-1/2
+    font-light
+    text-7xl
+    uppercase
+    mt-9
+}
+
+.name-sub-heading {
+  @apply
+    /* Default */
+    w-full
+    font-light
+    text-gray-300
+}
+
+.navigator {
+  background-color: #232323;
+  @apply
+    /* Default */
+    mt-9
+    px-3
+    py-4
+    w-full
+    flex
+    items-center
+    justify-between
+    gap-3
+}
