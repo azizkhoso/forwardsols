@@ -26,6 +26,7 @@
     w-full
     h-4/6
     flex
+    flex-col
     relative
     overflow-hidden
     /* Responsive */
@@ -81,8 +82,54 @@
     z-10
     mt-auto
     mb-6
+    p-3
+    transition-all
+    duration-700
     w-full
     flex
     flex-col
     gap-3
+}
+
+.location:hover .location-details {
+  @apply
+    /* Default */
+    mb-9
+}
+
+.icon-container {
+  @apply
+    /* Default */
+    flex
+    px-4
+    py-2
+    bg-gray-600
+}
+
+.icon {
+  @apply
+    /* Default */
+    m-auto
+    text-2xl
+    cursor-pointer
+}
+
+.message-container {
+  @apply
+    /* Default */
+    w-full
+    p-1
+    bg-gray-800
+    flex
+
+}
+
+.message {
+  @apply
+    /* Default */
+    w-full
+    p-1
+    bg-gray-800
+    flex
+    items-center
 }

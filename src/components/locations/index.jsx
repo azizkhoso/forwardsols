@@ -1,4 +1,8 @@
 import React from 'react';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt, faPhoneAlt, faAt } from '@fortawesome/free-solid-svg-icons';
+
 import styles from './Locations.module.css';
 
 import canada from '../../assets/canada.jpg';
@@ -24,7 +28,28 @@ function Locations() {
               <span className="text-lg font-bold">Canada</span>
             </p>
             <div className={styles['location-details']}>
-              <div className="bg-black">Details here</div>
+              <div className="flex w-full">
+                <span className={styles['icon-container']}>
+                  <FontAwesomeIcon icon={faMapMarkerAlt} className={styles.icon} />
+                </span>
+                <span className={styles.message}>
+                  Suite 1307, 3975 Grand Park Drive, Mississauga
+                </span>
+              </div>
+              <div className="flex w-full">
+                <span className={styles['icon-container']}>
+                  <FontAwesomeIcon icon={faPhoneAlt} className={styles.icon} />
+                </span>
+                <span className={styles.message}>(+92) 321 8444938</span>
+              </div>
+              <div className="flex w-full">
+                <span className={styles['icon-container']}>
+                  <FontAwesomeIcon icon={faAt} className={styles.icon} />
+                </span>
+                <span className={styles.message}>
+                  info@forwardsols.com
+                </span>
+              </div>
             </div>
           </div>
           <div className={styles.location}>
@@ -33,6 +58,30 @@ function Locations() {
               <span className={styles['company-name']}>Forwardsols</span>
               <span className="text-lg font-bold">Pakistan</span>
             </p>
+            <div className={styles['location-details']}>
+              <div className="flex w-full">
+                <span className={styles['icon-container']}>
+                  <FontAwesomeIcon icon={faMapMarkerAlt} className={styles.icon} />
+                </span>
+                <span className={styles.message}>
+                  Suite 1307, 3975 Grand Park Drive, Mississauga
+                </span>
+              </div>
+              <div className="flex w-full">
+                <span className={styles['icon-container']}>
+                  <FontAwesomeIcon icon={faPhoneAlt} className={styles.icon} />
+                </span>
+                <span className={styles.message}>(+92) 321 8444938</span>
+              </div>
+              <div className="flex w-full">
+                <span className={styles['icon-container']}>
+                  <FontAwesomeIcon icon={faAt} className={styles.icon} />
+                </span>
+                <span className={styles.message}>
+                  info@forwardsols.com
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
