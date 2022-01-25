@@ -102,7 +102,7 @@
 }
 
 .btn-see-more:hover {
-  box-shadow: 0 0 10px rgb(240, 91, 114);
+  box-shadow: 0 0 10px #0084b3;
   @apply
     /* Default */
     border-primary

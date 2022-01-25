@@ -1,0 +1,104 @@
+.product-container {
+  @apply
+    /* Default */
+    relative
+    flex
+    justify-center
+    w-full
+    overflow-hidden
+    text-white
+    transition-all
+    duration-1000
+    bg-cover
+    border-2
+    border-black
+    aspect-h-2
+    aspect-w-3
+    /* Responsive */
+    md:w-1/2
+    lg:w-1/3
+}
+
+.product-img {
+  @apply
+    /* Default */
+    object-cover
+    w-full
+    h-auto
+}
+
+.product-content {
+  @apply
+    /* Default */
+    absolute
+    m-0
+    border-0
+    h-full
+    left-0
+    duration-300
+    delay-300
+    transition-width
+    backdrop-filter
+    backdrop-brightness-20
+    w-0
+}
+.product-container:hover .product-content {
+  @apply
+    /* Default */
+    w-full
+}
+
+.product-cover {
+  @apply
+    /* Default */
+    hidden
+    text-sm
+    flex-col
+    w-full
+    h-full
+    gap-1
+    transition-opacity
+    delay-300
+    duration-700
+    p-3
+    opacity-0
+}
+
+.product-container:hover .product-cover {
+  @apply
+    /* Default */
+    flex
+}
+
+.product-cover:hover {
+  @apply
+    /* Default */
+    opacity-100
+}
+
+.cover-hr {
+  @apply
+     /* Default */
+     w-10
+     h-0.5
+     border
+     border-primary
+}
+
+.cover-title {
+  @apply
+    /* Default */
+    w-full
+    text-sm
+    font-bold
+    uppercase
+}
+
+.cover-link {
+  @apply
+    /* Default */
+    flex
+    items-center
+    gap-3
+    font-extrabold
+}

@@ -5,6 +5,9 @@ import { Link, useLocation, Navigate } from 'react-router-dom';
 import Row from '../shared/Row';
 import Product from './Product';
 
+import mc from '../../assets/mc.jpg';
+import smartphone from '../../assets/smartphone-mockup-floating.jpg';
+
 export default function Portfolio() {
   const { search } = useLocation();
   if (!search) return <Navigate replace to="?type=web-development" />;
@@ -16,10 +19,18 @@ export default function Portfolio() {
     { title: 'E-Commerce', link: '?type=e-commerce' },
   ];
   const products = [
-    { title: 'Music App', type: 'mobile', link: '/music-app' },
-    { title: 'Grade My Faculty', type: 'web-development', link: '/grade-my-faculty' },
-    { title: 'Snap Store', type: 'web-development', link: '/snap-store' },
-    { title: 'Snap Store', type: 'web-development', link: '/snap-store' },
+    {
+      title: 'Music App', type: 'mobile', link: '/music-app', img: mc,
+    },
+    {
+      title: 'Grade My Faculty', type: 'web-development', link: '/grade-my-faculty', img: mc,
+    },
+    {
+      title: 'Snap Store', type: 'web-development', link: '/snap-store', img: smartphone,
+    },
+    {
+      title: 'Snap Store', type: 'web-development', link: '/snap-store', img: smartphone,
+    },
   ];
   return (
     <div className="flex-grow w-full p-5 xl:pt-16">
@@ -31,10 +42,10 @@ export default function Portfolio() {
             ))
           }
         </ul>
-        <div className="flex flex-wrap justify-center w-full h-full">
+        <div className="relative flex flex-wrap justify-center w-full">
           {
             products.map((p) => (
-              <Product title={p.title} />
+              <Product key={p.title} title={p.title} img={p.img} />
             ))
           }
         </div>

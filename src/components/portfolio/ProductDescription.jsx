@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import redArrow from '../../assets/red-arrow.svg';
+import blueArrow from '../../assets/blue-arrow.svg';
 import tensorflow from '../../assets/tensorflow.svg';
 import colab from '../../assets/colab.svg';
 import aws from '../../assets/aws.svg';
@@ -14,7 +14,7 @@ export default function ProductDescription() {
         <div className="flex flex-col order-2 w-full md:order-1 md:w-1/2">
           <Link to="/portfolio">
             <div className="flex gap-3 text-sm font-medium">
-              <img src={redArrow} alt="red arrow" className="w-4 transform rotate-180" />
+              <img src={blueArrow} alt="red arrow" className="w-4 transform rotate-180" />
               <p>Back to Portfolio</p>
             </div>
           </Link>
@@ -57,7 +57,7 @@ export default function ProductDescription() {
                 <Link to="/portfolio/shoe-shop">
                   <p className="font-bold text-md">Shoe Shop</p>
                   <div className="flex gap-2 text-xs text-gray-100 uppercase" style={{ fontSize: '9px' }}>
-                    <img src={redArrow} alt="red arrow" className="w-4 transform rotate-180" />
+                    <img src={blueArrow} alt="red arrow" className="w-4 transform rotate-180" />
                     <p>Previous work</p>
                   </div>
                 </Link>
@@ -67,7 +67,7 @@ export default function ProductDescription() {
                   <p className="font-bold text-right text-md">Music App</p>
                   <div className="flex gap-2 text-gray-100 uppercase" style={{ fontSize: '9px' }}>
                     <p>Next work</p>
-                    <img src={redArrow} alt="red arrow" className="w-4" />
+                    <img src={blueArrow} alt="red arrow" className="w-4" />
                   </div>
                 </Link>
               </div>

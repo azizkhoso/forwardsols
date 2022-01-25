@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Executive.module.css';
 
 import AwaisShaikh from '../../assets/awais_shaikh.jpg';
-import redArrow from '../../assets/red-arrow.svg';
+import blueArrow from '../../assets/blue-arrow.svg';
 
 function Executive() {
   return (
@@ -12,7 +12,7 @@ function Executive() {
           <div className={styles['profile-container']}>
             <div className={styles['profile-details']}>
               <div className="flex w-full gap-3">
-                <img src={redArrow} alt="red arrow" className="w-4 h-4 transform rotate-180" />
+                <img src={blueArrow} alt="red arrow" className="w-4 h-4 transform rotate-180" />
                 <span className="text-xs">Back to Executives</span>
               </div>
               <h1 className={styles['name-heading']}>Awais Shaikh</h1>
@@ -30,7 +30,7 @@ function Executive() {
               <div>
                 <p className="text-lg font-bold">Usman Rana</p>
                 <p className="flex gap-3 text-xs uppercase">
-                  <img src={redArrow} alt="red arrow" className="w-4 h-4 transform rotate-180" />
+                  <img src={blueArrow} alt="red arrow" className="w-4 h-4 transform rotate-180" />
                   <span>Operations Manager</span>
                 </p>
               </div>
@@ -38,7 +38,7 @@ function Executive() {
                 <p className="text-lg font-bold">Abdul Wadood</p>
                 <p className="flex justify-end gap-3 text-xs uppercase">
                   <span>Designer</span>
-                  <img src={redArrow} alt="red arrow" className="w-4 h-4" />
+                  <img src={blueArrow} alt="red arrow" className="w-4 h-4" />
                 </p>
               </div>
             </div>
