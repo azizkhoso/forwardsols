@@ -32,7 +32,7 @@ export default function Services() {
       link: '/portfolio#mobile-application',
     },
     {
-      title: 'E-Commerce Development',
+      title: 'E-Commerce',
       content: 'Ai content here the lksjf lsdjf kjsdlfj ljsdflj lsjf kjlfj lsdjfdj lldjf lsdjfldsjfl jsldfls lsjflsdjfl jslfjls jflsdfj',
       logos: [tensorflow, kubernetes, colab, aws, keras, pytorch],
       link: '/portfolio#e-commerce',

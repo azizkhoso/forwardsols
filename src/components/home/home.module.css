@@ -1,10 +1,74 @@
 .cover {
-  background: -moz-linear-gradient(45deg,  rgba(240,91,114,1) 0%, rgba(240,91,114,0.29) 11%, rgba(240,91,114,0.07) 18%, rgba(240,91,114,0.07) 68%, rgba(244,206,176,0.07) 92%);
-  background: -webkit-linear-gradient(45deg,  rgba(240,91,114,1) 0%,rgba(240,91,114,0.29) 11%,rgba(240,91,114,0.07) 18%,rgba(240,91,114,0.07) 68%,rgba(244,206,176,0.07) 92%);
-  background: linear-gradient(45deg,  rgba(240,91,114,1) 0%,rgba(240,91,114,0.29) 11%,rgba(240,91,114,0.07) 18%,rgba(240,91,114,0.07) 68%,rgba(244,206,176,0.07) 92%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f05b72', endColorstr='#12f4ceb0',GradientType=1 );    
+  background: -moz-linear-gradient(10deg,  rgba(0, 151, 204,1) 0%, rgba(0, 151, 204,0.29) 11%, rgba(0, 151, 204,0.07) 18%, rgba(0, 151, 204,0.07) 68%, rgba(244,206,176,0.07) 92%);
+  background: -webkit-linear-gradient(10deg,  rgba(0, 151, 204,1) 0%,rgba(0, 151, 204,0.29) 11%,rgba(0, 151, 204,0.07) 18%,rgba(0, 151, 204,0.07) 68%,rgba(244,206,176,0.07) 92%);
+  background: linear-gradient(10deg,  rgba(0, 151, 204,1) 0%,rgba(0, 151, 204,0.29) 11%,rgba(0, 151, 204,0.07) 18%,rgba(0, 151, 204,0.07) 68%,rgba(244,206,176,0.07) 92%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f05b72', endColorstr='#12f4ceb0',GradientType=1 );
+  @apply
+    /* Default */
+    absolute
+    inset-0
+    w-full
+    h-full
 }
 
 .left3:hover {
   left: 12px;
+}
+
+.home-content {
+  @apply
+    /* Default */
+    absolute
+    flex-grow
+    w-full
+    h-full
+    bg-black
+}
+
+.slides-container {
+  @apply
+    /* Default */
+    relative
+    flex
+    items-stretch
+    w-full
+    h-full
+    overflow-hidden
+    justify-items-stretch
+}
+
+.slide {
+  @apply
+    /* Default */
+    absolute
+    flex
+    flex-col
+    w-screen
+    h-full
+    text-white
+    transition-left
+    bg-no-repeat
+    bg-cover
+    ease-in-out
+    duration-1300
+    /* Responsive */
+}
+
+.slide-content {
+  @apply
+    /* Default */
+    relative
+    flex
+    flex-col
+    w-4/12
+    mx-3
+    font-semibold
+    text-white
+    transition-opacity
+    delay-1900
+    top-1/2
+    duration-1600
+    /* Responsive */
+    md:mx-auto
+
 }

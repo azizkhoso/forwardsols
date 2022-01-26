@@ -13,7 +13,7 @@ export default function Portfolio() {
   if (!search) return <Navigate replace to="?type=web-development" />;
   const menus = [
     { title: 'Web', link: '?type=web-development' },
-    { title: 'AI', link: '?type=ai' },
+    { title: 'DM', link: '?type=digital-marketing' },
     { title: 'UI/UX', link: '?type=ui/ux' },
     { title: 'Mobile', link: '?type=mobile' },
     { title: 'E-Commerce', link: '?type=e-commerce' },

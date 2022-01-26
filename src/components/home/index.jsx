@@ -2,9 +2,9 @@ import React from 'react';
 
 import styles from './home.module.css';
 
-import frontendDevelopment from '../../assets/frontendDevelopment.jpg';
+import frontendDevelopment from '../../assets/frontendDevelopment.png';
 import digitalMarketing from '../../assets/digitalMarketing.jpg';
-import ai from '../../assets/ai.jpg';
+import mobileapp from '../../assets/mobileapp.jpg';
 import whiteArrow from '../../assets/white-arrow.svg';
 
 export default function Home() {
@@ -16,15 +16,15 @@ export default function Home() {
       link: '/services',
     },
     {
-      img: digitalMarketing,
-      title: 'Market digitaly with us',
-      text: 'We provide SEO, SEM, Email Marketing and many more.',
+      img: mobileapp,
+      title: 'Attractive Apps',
+      text: 'Have a look on attractive mobile app services.',
       link: '/services',
     },
     {
-      img: ai,
-      title: 'Aritificial Intelligence',
-      text: 'Automate your business with AI',
+      img: digitalMarketing,
+      title: 'Market Digitally',
+      text: 'We provide SEO, SEM, Email Marketing and many more.',
       link: '/services',
     },
   ];
@@ -37,27 +37,24 @@ export default function Home() {
   return (
     <>
       <div className="flex-grow" />
-      <div className="absolute flex-grow w-full h-full bg-black">
-        <div className="relative flex items-stretch w-full h-full overflow-hidden justify-items-stretch">
+      <div className={styles['home-content']}>
+        <div className={styles['slides-container']}>
           {
             slides.map((slide, idx) => (
               <div
-                className="absolute flex flex-col w-screen h-full text-white"
+                key={slide.title}
+                className={styles.slide}
                 style={{
-                  transitionProperty: 'left',
                   left: `calc((${idx} * 100vw) - (${count % slides.length} * 100vw))`,
-                  transitionDuration: '1300ms',
-                  transitionTimingFunction: 'ease-in-out',
-                  backgroundImage: `url(${slide.img})`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: 'cover',
+                  // backgroundImage: `url(${slide.img})`,
                 }}
               >
+                <img src={slide.img} alt={slide.title} className="absolute object-cover w-full h-full" />
                 <div
-                  className={`relative flex flex-col w-5/12 mx-auto font-semibold text-white transition-opacity delay-2100 top-1/2 duration-1600 opacity-${(count % slides.length) === idx ? '100' : '0'}`}
+                  className={`${styles['slide-content']} opacity-${(count % slides.length) === idx ? '100' : '0'}`}
                 >
                   <h1 className="text-5xl font-bold">{slide.title}</h1>
-                  <p className="text-lg text-primary">{slide.text}</p>
+                  <p className="text-lg">{slide.text}</p>
                   <span className="relative z-20 flex items-center justify-between p-3 border border-white rounded-md w-60">
                     <span>Explore</span>
                     <span className="absolute inset-0 z-20 flex items-center duration-700 ease-in-out cursor-pointer transition-right hover:-right-6">
@@ -68,7 +65,7 @@ export default function Home() {
               </div>
             ))
           }
-          <div className={`${styles.cover} absolute inset-0 w-full h-full`} />
+          <div className={styles.cover} />
         </div>
       </div>
     </>
